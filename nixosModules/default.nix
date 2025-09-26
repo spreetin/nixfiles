@@ -1,10 +1,10 @@
-{ inputs, ... }:
+{ self, inputs, ... }:
 
 {
   imports = [
-    inputs.self.nixosModules.vhost_handler
-    inputs.self.nixosModules.profiles
-    inputs.self.nixosModules.themes
+    self.nixosModules.vhost_handler
+    self.nixosModules.profiles
+    self.nixosModules.themes
     inputs.catppuccin.nixosModules.catppuccin
   ];
 }
