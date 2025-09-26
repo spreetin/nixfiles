@@ -1,0 +1,20 @@
+{ config, lib, ... }:
+let
+  cfg = config.spreetin;
+in
+{
+  config = lib.mkIf (lib.elem "sound" cfg.profiles) {
+    services = {
+      pulseaudio.enable = false;
+      pipewire = {
+        enable = true;
+        alsa = {
+          enable = true;
+          support32Bit = true;
+        };
+        pulse.enable = true;
+        jack.enable = true;
+      };
+    };
+  };
+}
