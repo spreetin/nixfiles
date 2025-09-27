@@ -60,18 +60,22 @@
           #packages.default = pkgs.hello;
         };
       flake = {
-        nixosModules = {
-          default = ./nixosModules;
-          vhost_handler = import ./nixosModules/vhost_handler { inherit inputs; };
-          profiles = import ./nixosModules/profiles { inherit inputs; };
-          themes = import ./nixosModules/themes { inherit inputs; };
-        };
-        homeModules = {
-          default = ./homeModules;
-          profiles = ./homeModules/profiles;
-          neovim = ./homeModules/neovim;
-          zsh = ./homeModules/zsh;
-        };
+        nixosModules =
+          { inputs, ... }:
+          {
+            default = ./nixosModules;
+            vhost_handler = ./nixosModules/vhost_handler;
+            profiles = ./nixosModules/profiles;
+            themes = ./nixosModules/themes;
+          };
+        homeModules =
+          { inputs, ... }:
+          {
+            default = ./homeModules;
+            profiles = ./homeModules/profiles;
+            neovim = ./homeModules/neovim;
+            zsh = ./homeModules/zsh;
+          };
       };
     };
 }
