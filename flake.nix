@@ -63,9 +63,9 @@
         nixosModules =
           { inputs, ... }:
           {
-            vhost_handler = ./nixosModules/vhost_handler;
-            profiles = ./nixosModules/profiles;
-            themes = ./nixosModules/themes;
+            vhost_handler = { inputs, ... }: ./nixosModules/vhost_handler;
+            profiles = { inputs, ... }: ./nixosModules/profiles;
+            themes = { inputs, ... }: ./nixosModules/themes;
           };
         homeModules =
           { inputs, ... }:
