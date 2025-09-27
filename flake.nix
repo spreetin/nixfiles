@@ -63,7 +63,6 @@
         nixosModules =
           { inputs, ... }:
           {
-            default = ./nixosModules;
             vhost_handler = ./nixosModules/vhost_handler;
             profiles = ./nixosModules/profiles;
             themes = ./nixosModules/themes;
@@ -71,7 +70,6 @@
         homeModules =
           { inputs, ... }:
           {
-            default = ./homeModules;
             profiles = ./homeModules/profiles;
             neovim = ./homeModules/neovim;
             zsh = ./homeModules/zsh;
