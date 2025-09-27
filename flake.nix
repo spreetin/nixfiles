@@ -60,13 +60,11 @@
           #packages.default = pkgs.hello;
         };
       flake = {
-        nixosModules =
-          { inputs, ... }:
-          {
-            vhost_handler = { inputs, ... }: ./nixosModules/vhost_handler;
-            profiles = { inputs, ... }: ./nixosModules/profiles;
-            themes = { inputs, ... }: ./nixosModules/themes;
-          };
+        nixosModules = {
+          vhost_handler = { inputs, ... }: ./nixosModules/vhost_handler;
+          profiles = { inputs, ... }: ./nixosModules/profiles;
+          themes = { inputs, ... }: ./nixosModules/themes;
+        };
         homeModules =
           { inputs, ... }:
           {
