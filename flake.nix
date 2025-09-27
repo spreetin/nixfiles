@@ -62,9 +62,9 @@
       flake = {
         nixosModules = {
           default = ./nixosModules;
-          vhost_handler = ./nixosModules/vhost_handler;
-          profiles = ./nixosModules/profiles;
-          themes = ./nixosModules/themes;
+          vhost_handler = import ./nixosModules/vhost_handler { inherit inputs; };
+          profiles = import ./nixosModules/profiles { inherit inputs; };
+          themes = import ./nixosModules/themes { inherit inputs; };
         };
         homeModules = {
           default = ./homeModules;
