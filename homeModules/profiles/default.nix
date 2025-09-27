@@ -15,6 +15,7 @@ in
 {
   imports = [
     inputs.optnix.homeModules.optnix
+    inputs.catppuccin.homeModules.catppuccin
     ./profiles/audio.nix
     ./profiles/chat.nix
     ./profiles/desktop.nix
