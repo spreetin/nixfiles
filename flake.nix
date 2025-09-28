@@ -61,17 +61,17 @@
         };
       flake = {
         nixosModules = {
+          default = import ./nixosModules inputs;
           vhost_handler = import ./nixosModules/vhost_handler inputs;
           profiles = import ./nixosModules/profiles inputs;
           themes = import ./nixosModules/themes inputs;
         };
-        homeModules =
-          { inputs, ... }:
-          {
-            profiles = import ./homeModules/profiles inputs;
-            neovim = import ./homeModules/neovim inputs;
-            zsh = import ./homeModules/zsh inputs;
-          };
+        homeModules = {
+          default = import ./homeModules inputs;
+          profiles = import ./homeModules/profiles inputs;
+          neovim = import ./homeModules/neovim inputs;
+          zsh = import ./homeModules/zsh inputs;
+        };
       };
     };
 }
