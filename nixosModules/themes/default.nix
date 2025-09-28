@@ -1,6 +1,5 @@
 inputs:
 {
-  inputs,
   config,
   lib,
   ...
