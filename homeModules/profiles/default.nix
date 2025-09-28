@@ -1,8 +1,8 @@
+inputs:
 {
   lib,
   config,
   nixosOptions,
-  inputs,
   hostname,
   pkgs,
   ...

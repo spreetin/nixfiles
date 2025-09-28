@@ -68,9 +68,9 @@
         homeModules =
           { inputs, ... }:
           {
-            profiles = ./homeModules/profiles;
-            neovim = ./homeModules/neovim;
-            zsh = ./homeModules/zsh;
+            profiles = import ./homeModules/profiles inputs;
+            neovim = import ./homeModules/neovim inputs;
+            zsh = import ./homeModules/zsh inputs;
           };
       };
     };
